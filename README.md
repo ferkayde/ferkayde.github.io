@@ -1,1 +1,0 @@
-# berkaydemir.github.io
