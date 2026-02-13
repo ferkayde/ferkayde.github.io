@@ -1,0 +1,347 @@
+/* ================================================
+   Personal Portfolio — Sharon Zheng style adapted
+   3D Perspective / Projection Effect
+   ================================================ */
+
+:root {
+  --main-bg-color: #F7F7F7;
+  --text-color: #0F0F0F;
+}
+
+::selection {
+  background: var(--text-color);
+  color: var(--main-bg-color);
+}
+
+::-moz-selection {
+  background: rgba(255, 255, 255, 0.99);
+  color: var(--main-bg-color);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 2rem;
+  padding: 30px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: var(--main-bg-color);
+  color: var(--text-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ================================================
+   LINKS
+   ================================================ */
+a {
+  color: var(--text-color);
+  padding-right: 16px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 172 172'%3E%3Cg fill='%230F0F0F'%3E%3Cpath d='M96.75,26.875v10.75h29.89844l-66.01172,66.01172l7.72656,7.72656l66.01172,-66.01172v29.89844h10.75v-48.375zM26.875,48.375v96.75h96.75v-69.875l-10.75,10.75v48.375h-75.25v-75.25h48.375l10.75,-10.75z'/%3E%3C/g%3E%3C/svg%3E") right center no-repeat;
+  background-size: 14px;
+}
+
+a:hover {
+  opacity: 0.75;
+  transition: opacity 0.2s ease;
+}
+
+.no-icon {
+  background: none;
+  padding-right: 0;
+}
+
+h3 a {
+  padding-right: 18px;
+  background-size: 16px;
+}
+
+/* ================================================
+   TYPOGRAPHY
+   ================================================ */
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+}
+
+h1 {
+  word-spacing: 28px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+h1 span {
+  padding-bottom: 2px;
+  border-bottom: 5px solid var(--text-color);
+}
+
+h2 {
+  margin-top: 120px;
+}
+
+h3 {
+  margin-bottom: 3px;
+}
+
+h4 {
+  margin-bottom: 15px;
+}
+
+/* ================================================
+   HR / Separator
+   ================================================ */
+hr {
+  border: 0.5px solid var(--text-color);
+}
+
+/* ================================================
+   HEADER / HERO
+   ================================================ */
+header {
+  height: 88vh;
+  position: relative;
+  width: auto;
+}
+
+section,
+header {
+  margin-bottom: 50px;
+}
+
+/* ================================================
+   LISTS
+   ================================================ */
+ul {
+  margin: 0;
+  list-style-type: square;
+  padding: 0 1rem;
+}
+
+ul li {
+  margin: 5px 0;
+  margin-left: -15px;
+}
+
+section ul li {
+  margin-bottom: 20px;
+}
+
+ul li sup {
+  margin-right: 8px;
+  font-size: 0.6em;
+}
+
+section ul {
+  margin-top: 10px;
+}
+
+/* ================================================
+   INTRO (below hero)
+   ================================================ */
+.intro {
+  margin-bottom: 0;
+}
+
+.intro ul {
+  list-style: none;
+  padding: 0;
+}
+
+.intro ul li {
+  margin-left: 0;
+  margin-bottom: 5px;
+}
+
+/* ================================================
+   TIGHT LIST (work experience)
+   ================================================ */
+.tight li {
+  margin-bottom: 10px;
+}
+
+/* ================================================
+   DETAIL SUB-LIST
+   ================================================ */
+.detail-list {
+  font-size: 0.85em;
+  margin-top: 8px;
+}
+
+.detail-list li {
+  margin-bottom: 6px;
+}
+
+/* ================================================
+   MISC
+   ================================================ */
+.smaller {
+  font-size: 0.8em;
+}
+
+.subtext {
+  font-size: 0.85em;
+  opacity: 0.85;
+  margin-top: 4px;
+}
+
+.date {
+  font-size: 0.8em;
+  opacity: 0.7;
+}
+
+/* ================================================
+   FOOTER
+   ================================================ */
+footer {
+  margin: 100px 0 0;
+}
+
+/* ================================================
+   3D FOLD STRUCTURE (from App.module.css)
+   ================================================ */
+.all {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.wrapper3d {
+  position: relative;
+  perspective: 20vw;
+  transform-style: preserve-3d;
+}
+
+.fold {
+  overflow: hidden;
+  width: 80vw;
+  height: 80vh;
+}
+
+.foldAlign {
+  width: 100%;
+  height: 100%;
+}
+
+.foldBottom .foldAlign {
+  transform: translateY(-100%);
+}
+
+.foldTop .foldAlign {
+  transform: translateY(100%);
+}
+
+.foldBottom {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  transform-origin: top center;
+  transform: rotateX(90deg);
+}
+
+.foldTop {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 100%;
+  transform-origin: bottom center;
+  transform: rotateX(-90deg);
+}
+
+/* ================================================
+   RESPONSIVE
+   ================================================ */
+@media only screen and (max-width: 767px) {
+  body {
+    font-size: 0.9rem;
+  }
+
+  .fold {
+    height: 80vh;
+  }
+
+  header {
+    height: 40vh;
+  }
+
+  h1 {
+    word-spacing: 18px;
+  }
+
+  h1 span {
+    padding-bottom: 2px;
+    border-bottom: 2px solid var(--text-color);
+  }
+
+  .foldBottom {
+    transform: rotateX(140deg);
+  }
+
+  .foldTop {
+    transform: rotateX(-140deg);
+  }
+
+  footer {
+    padding-bottom: 100px;
+  }
+}
+
+/* ================================================
+   PRINT
+   ================================================ */
+@media print {
+  .all {
+    position: static;
+    display: block;
+    width: auto;
+    height: auto;
+    align-items: normal;
+    justify-content: normal;
+  }
+
+  .wrapper3d {
+    perspective: none;
+    transform: none;
+  }
+
+  .foldTop,
+  .foldBottom {
+    display: none;
+  }
+
+  .fold {
+    width: auto;
+    height: auto;
+    overflow: visible;
+  }
+
+  [data-fold-content='true'] {
+    transform: none !important;
+  }
+
+  html,
+  body {
+    overflow: visible !important;
+    background: #fff !important;
+    color: #000 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  a {
+    color: #000;
+    background: none;
+    padding-right: 0;
+  }
+}

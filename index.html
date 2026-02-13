@@ -1,354 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Berk Aydemir</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --light-color: #E1F2B7;
-            --dark-color: #2C380D;
-            --background-color: var(--light-color);
-            --text-color: var(--dark-color);
-            --transition: all 0.3s ease;
-        }
-
-        body {
-            font-family: 'Montserrat Alternates', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--background-color);
-            color: var(--text-color);
-            transition: var(--transition);
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            padding: 20px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background-color: transparent;
-            z-index: 100;
-            transition: var(--transition);
-        }
-
-/* Add these styles to make the button backgrounds visible */
-        .hamburger {
-            cursor: pointer;
-            width: 25px;
-            height: 25px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            padding: 5px 0;
-            position: absolute;
-            left: 20px;
-            top: 20px;
-        }
-
-        .hamburger-line {
-            height: 5px;
-            width: 100%;
-            background-color: var(--text-color);
-            border-radius: 5px;
-            margin-bottom: 5px;
-        }
-
-        .theme-toggle {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            width: 45px;
-            height: 25px;
-            background-color: var(--text-color);
-            border-radius: 15px;
-            cursor: pointer;
-            transition: var(--transition);
-            overflow: hidden;
-        }
-
-        .theme-toggle-slider {
-            position: absolute;
-            top: 3px;
-            right: 3px;
-            width: 19px;
-            height: 19px;
-            background-color: var(--background-color);
-            border-radius: 50%;
-            transition: var(--transition);
-        }
-
-        .dark-mode .theme-toggle-slider {
-            right: 23px;
-        }
-
-        .menu {
-            position: fixed;
-            top: 0;
-            left: -250px;
-            width: 250px;
-            height: 100%;
-            background-color: var(--background-color);
-            padding-top: 60px;
-            transition: var(--transition);
-            z-index: 99;
-            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .menu.active {
-            left: 0;
-        }
-
-        .menu-item {
-            padding: 15px 20px;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .menu-item:hover {
-            background-color: rgba(0, 0, 0, 0.05);
-        }
-
-        .content {
-            padding-top: 48px;
-            text-align: center;
-        }
-
-        .section {
-            margin-bottom: 30px;
-            scroll-margin-top: 40px;
-        }
-
-        h1 {
-            font-size: 48px;
-            margin-bottom: 5px;
-        }
-
-        h2 {
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-
-        .education-item, .bootcamp-item {
-            margin-bottom: 20px;
-        }
-
-        .bootcamp-year {
-            font-weight: bold;
-        }
-
-        .skills-languages {
-            margin-top: 40px;
-        }
-
-        .skills-languages div {
-            margin-bottom: 15px; /* Adds space between the divs */
-        }
-
-        .contact {
-            margin-top: 20px;
-        }
-
-        .contact a {
-            margin: 0 10px;
-            color: var(--text-color);
-            text-decoration: none;
-        }
-
-        .contact a:hover {
-            margin: 0 10px;
-            color: var(--text-color);
-            text-decoration: underline;
-            font-weight:bold;
-        }
-
-        .section#projects a {
-            color: var(--text-color);
-            text-decoration: none;
-            transition: var(--transition);
-            display: inline-block;
-            margin: 5px 0;
-        }
-
-        .section#projects a:hover {
-            text-decoration: underline;
-        }
-
-        .cv-link-container {
-            margin-top: 20px;
-        }
-
-        .cv-link {
-            color: var(--text-color);
-            text-decoration: underline;
-            font-weight: 600;
-            transition: var(--transition);
-        }
-
-        .cv-link:hover {
-            opacity: 0.8;
-        }
-
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Berk Aydemir</title>
+  <meta name="title" content="Berk Aydemir" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Berk Aydemir" />
+  <meta name="author" content="Berk Aydemir" />
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-    <div class="header">
-        <div class="hamburger" id="hamburger">
-            <div class="hamburger-line"></div>
-            <div class="hamburger-line"></div>
-            <div class="hamburger-line"></div>
+
+  <!-- 3D FOLD WRAPPER -->
+  <div class="all">
+    <div class="wrapper3d">
+
+      <!-- Top fold — ceiling distortion -->
+      <div class="fold foldTop">
+        <div class="foldAlign">
+          <div data-fold-content="true" id="top-content"></div>
         </div>
-        <div class="theme-toggle" id="theme-toggle">
-            <div class="theme-toggle-slider"></div>
-        </div>
-    </div>
+      </div>
 
-    <div class="menu" id="menu">
-        <div class="menu-item" data-target="about">About</div>
-        <div class="menu-item" data-target="education">Education</div>
-        <div class="menu-item" data-target="bootcamps">Bootcamps</div>
-        <div class="menu-item" data-target="projects">Projects</div>
-        <div class="menu-item" data-target="skills">Skills</div>
-        <div class="menu-item" data-target="contact">Contact</div>
-    </div>
+      <!-- Center fold — main visible viewport -->
+      <div class="fold" id="center-fold">
+        <div class="foldAlign">
+          <div data-fold-content="true" id="center-content">
 
-    <div class="container">
-        <div class="content">
-            <div class="section" id="about">
-                <h1>BERK AYDEMIR</h1>
-                <p>Istanbul, TUR</p>
-            </div>
-            
-            <div class="cv-link-container">
-                <a href="https://drive.google.com/file/d/1B1_FYvZVLOzBKEHA0xvxFo781SEDvpp7/view?usp=drive_link" download class="cv-link">Resume</a>
-            </div>
+            <!-- CONTENT START -->
+            <div class="content-inner" id="content-source">
 
-            <div class="section" id="education">
-                <h2>Work Experience</h2>
-                <div class="education-item">
-                    <div><strong>Data Science Intern</strong></div>
-                    <div><strong>07/25 - 08/25 Dogus Teknoloji</strong></div>
-                </div>
-            </div>
-            
-            <div class="section" id="education">
+              <header>
+                <h1>Berk Aydemir</h1>
+              </header>
+
+              <article class="intro">
+                <ul>
+                  <li>Mathematician — Exploring ML and Finance at the intersection of theory and application</li>
+                  <li>ferkayde@gmail.com</li>
+                  <li><a href="https://linkedin.com/in/berkaydemir">linkedin.com/in/berkaydemir</a></li>
+                </ul>
+              </article>
+              <section>
                 <h2>Education</h2>
-                <div class="education-item">
-                    <div><strong>Undergraduate</strong></div>
-                    <div><strong>2021 - 2026 Bogazici University, Mathematics</strong></div>
-                </div>
-                <div class="education-item">
-                    <div>High School</div>
-                    <div>2017 - 2021 Sakarya Cevat Ayhan Fen Lisesi</div>
-                </div>
-            </div>
+                <hr />
+                <article>
+                  <ul class="tight">
+                    <li>
+                      <sup>2026</sup>
+                      Boğaziçi University <strong> Mathematics </strong>
+                    </li>
+                    <li>
+                      <sup>2021</sup>
+                      Sakarya Cevat Ayhan High School
+                    </li>
+                  </ul>
+                </article>
+              </section>
 
-            <div class="section" id="bootcamps">
-                <h2>Bootcamps</h2>
-                <div class="bootcamp-item">
-                    <div class="bootcamp-year">2024</div>
-                    <div>Generative AI & LLMs Bootcamp</div>
-                    <div>MMO Istanbul Kolektif AI</div>
-                </div>
-                <div class="bootcamp-item">
-                    <div class="bootcamp-year">2022</div>
-                    <div>Deep Learning Bootcamp</div>
-                    <div>Global AI Hub</div>
-                </div>
-            </div>
-
-            <div class="section" id="projects">
+              <section>
                 <h2>Projects</h2>
-                <div><a href="project1.html" target="_blank"><strong>Project 1</strong></a></div>
-                <div><a href="project2.html" target="_blank"><strong>Project 2</strong></a></div>
-            </div>
+                <hr />
+                <section>
+                  <article>
+                    <ul>
+                      <li>
+                        <sup>2026</sup>
+                        Earthquake Waveform Generation for the Marmara Region Using a
+                        Diffusion-Architecture-Based Generative Artificial Intelligence Model
+                      </li>
+                    </ul>
+                  </article>
+                </section>
+              </section>
 
-            <div class="section" id="skills">
-                <div class="skills-languages">
-                    <div><strong>Computer Skills:</strong> Excel, Python, SQL, PowerBI, R</div>
-                    <div><strong>Languages:</strong> Turkish (Native), English (Advanced), French (Elementary)</div>
-                </div>
-            </div>
+              <section>
+                <h2>Work Experience</h2>
+                <hr />
+                <article>
+                  <ul class="tight">
+                    <li>
+                      <sup>2025</sup>
+                      Doğuş Teknoloji, Istanbul — <i>Data Scientist Intern</i>
+                    </li>
+                    <li>
+                      <sup>2025</sup>
+                      Boğaziçi University Mathematics Department, Istanbul — <i>Student Assistant</i>
+                    </li>
+                  </ul>
+                </article>
+              </section>
 
-            <div class="section" id="contact">
-                <div class="contact">
-                    <a href="mailto:ferkayde@gmail.com">ferkayde@gmail.com</a>
-                </div>
-                <div class="contact">    
-                    <a href="tel:+905442782777">+90 544 278 82 77</a>
-                </div>
-                <div class="contact">
-                    <a href="https://www.kaggle.com/ferkayde" target="_blank">Kaggle</a>
-                    <a href="https://www.linkedin.com/in/berk--aydemir" target="_blank">LinkedIn</a>
-                    <a href="https://github.com/ferkayde" target="_blank">GitHub</a>
-                </div>
+              <section>
+                <h2>Activities</h2>
+                <hr />
+                <article>
+                  <ul class="tight">
+                    <li>
+                      <sup>2026</sup>
+                      Deep Learning Study Group — <i>inzva</i>
+                    </li>
+                    <li>
+                      <sup>2024</sup>
+                      Generative AI &amp; LLMs Bootcamp — <i>MMO Istanbul Kolektif AI</i>
+                    </li>
+                    <li>
+                      <sup>2022</sup>
+                      Deep Learning Bootcamp — <i>Global AI Hub</i>
+                    </li>
+                  </ul>
+                </article>
+              </section>
+
+              <section>
+                <h2>Scholarships</h2>
+                <hr />
+                <article>
+                  <ul class="tight">
+                    <li>
+                      <sup>2021</sup>
+                      2205 — Undergraduate Scholarship Program, <i>TÜBİTAK</i>
+                    </li>
+                    <li>
+                      <sup>2022</sup>
+                      Cahit Arf Scholarship, <i>GSB</i>
+                    </li>
+                  </ul>
+                </article>
+              </section>
+
+              <section>
+                <h2>Technical Skills</h2>
+                <hr />
+                <article>
+                  <div>
+                    <p>Excel, Python, SQL, PowerBI, R, MATLAB</p>
+                  </div>
+                </article>
+              </section>
+
+              <section>
+                <h2>Languages</h2>
+                <hr />
+                <article>
+                  <div>
+                    <p>Turkish <span class="smaller">(Native)</span>, English <span
+                        class="smaller">(Professional)</span>, French <span class="smaller">(Elementary)</span></p>
+                  </div>
+                </article>
+              </section>
+
+              <section id="last-section">
+                <h2>Interests</h2>
+                <hr />
+                <article>
+                  <div>
+                    <p>Probability Theory, Machine Learning, Finance, Mathematics</p>
+                    <p>Photography, Sewing, Cooking, Eating</p>
+                  </div>
+                </article>
+              </section>
+
+              <footer>
+                <p></p>
+                <p>If you're interested in working together, reach out!</p>
+                <ul>
+                  <li><a href="mailto:ferkayde@gmail.com">ferkayde@gmail.com</a></li>
+                  <li><a href="https://linkedin.com/in/berkaydemir">LinkedIn</a></li>
+                  <li><a href="https://github.com/ferkayde">GitHub</a></li>
+                  <li><a href="https://kaggle.com/ferkayde">kaggle</a></li>
+                </ul>
+              </footer>
+
             </div>
+            <!-- CONTENT END -->
+
+          </div>
         </div>
+      </div>
+
+      <!-- Bottom fold — floor distortion -->
+      <div class="fold foldBottom">
+        <div class="foldAlign">
+          <div data-fold-content="true" id="bottom-content"></div>
+        </div>
+      </div>
+
     </div>
+  </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const hamburger = document.getElementById('hamburger');
-            const menu = document.getElementById('menu');
-            const themeToggle = document.getElementById('theme-toggle');
-            const menuItems = document.querySelectorAll('.menu-item');
+  <script src="script.js"></script>
 
-            // Hamburger menu toggle
-            hamburger.addEventListener('click', function() {
-                menu.classList.toggle('active');
-            });
-
-            // Theme toggle
-            themeToggle.addEventListener('click', function() {
-                document.body.classList.toggle('dark-mode');
-                if (document.body.classList.contains('dark-mode')) {
-                    document.documentElement.style.setProperty('--background-color', '#2C380D');
-                    document.documentElement.style.setProperty('--text-color', '#E1F2B7');
-                } else {
-                    document.documentElement.style.setProperty('--background-color', '#E1F2B7');
-                    document.documentElement.style.setProperty('--text-color', '#2C380D');
-                }
-            });
-
-            // Smooth scrolling for menu items
-            menuItems.forEach(item => {
-                item.addEventListener('click', function() {
-                    const targetId = this.getAttribute('data-target');
-                    const targetElement = document.getElementById(targetId);
-                    
-                    if (targetElement) {
-                        menu.classList.remove('active');
-                        
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 80,
-                            behavior: 'smooth'
-                        });
-                    }
-                });
-            });
-
-            // Close menu when clicking outside
-            document.addEventListener('click', function(event) {
-                if (!menu.contains(event.target) && !hamburger.contains(event.target) && menu.classList.contains('active')) {
-                    menu.classList.remove('active');
-                }
-            });
-        });
-    </script>
+  <!-- Clone content into fold panels -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const source = document.getElementById('content-source');
+      const topTarget = document.getElementById('top-content');
+      const bottomTarget = document.getElementById('bottom-content');
+      if (source && topTarget) topTarget.innerHTML = source.innerHTML;
+      if (source && bottomTarget) bottomTarget.innerHTML = source.innerHTML;
+    });
+  </script>
 </body>
 
 </html>
-
