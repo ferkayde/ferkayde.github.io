@@ -6,9 +6,9 @@
 (function pickTheme() {
   const roll = Math.random() * 100;
   let theme;
-  if (roll < 40) {
+  if (roll < 47.5) {
     theme = 'dark';
-  } else if (roll < 80) {
+  } else if (roll < 95) {
     theme = 'light';
   } else {
     theme = 'blue';
