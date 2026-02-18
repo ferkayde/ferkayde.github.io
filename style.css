@@ -4,6 +4,13 @@
    ================================================ */
 
 /* ---------- THEME DEFINITIONS ---------- */
+
+/* Fallback (before themes so [data-theme] selectors win the cascade) */
+:root {
+  --main-bg-color: #F7F7F7;
+  --text-color: #0F0F0F;
+}
+
 [data-theme="dark"] {
   --main-bg-color: #0F0F0F;
   --text-color: #F7F7F7;
@@ -16,12 +23,6 @@
 
 [data-theme="blue"] {
   --main-bg-color: #1700c7;
-  --text-color: #F7F7F7;
-}
-
-/* Fallback if no theme set */
-:root {
-  --main-bg-color: #0F0F0F;
   --text-color: #F7F7F7;
 }
 
