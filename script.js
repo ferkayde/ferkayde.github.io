@@ -1,4 +1,39 @@
 // ================================================
+// Random Theme Picker
+// 49.5% dark / 49.5% light / 1% blue (Sharon's original)
+// ================================================
+
+(function pickTheme() {
+  const roll = Math.random() * 100;
+  let theme;
+  if (roll < 49.5) {
+    theme = 'dark';
+  } else if (roll < 99) {
+    theme = 'light';
+  } else {
+    theme = 'blue';
+  }
+  document.documentElement.setAttribute('data-theme', theme);
+})();
+
+// Helper: set the arrow-icon SVG on all links to match --text-color
+function updateLinkArrows() {
+  const style = getComputedStyle(document.documentElement);
+  const textColor = style.getPropertyValue('--text-color').trim();
+  // URL-encode the hex color for the SVG data URI
+  const fill = encodeURIComponent(textColor);
+  const svg = `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 172 172'%3E%3Cg fill='${fill}'%3E%3Cpath d='M96.75,26.875v10.75h29.89844l-66.01172,66.01172l7.72656,7.72656l66.01172,-66.01172v29.89844h10.75v-48.375zM26.875,48.375v96.75h96.75v-69.875l-10.75,10.75v48.375h-75.25v-75.25h48.375l10.75,-10.75z'/%3E%3C/g%3E%3C/svg%3E") right center no-repeat`;
+
+  document.querySelectorAll('a:not(.no-icon)').forEach(a => {
+    a.style.background = svg;
+    a.style.backgroundSize = '14px';
+  });
+  document.querySelectorAll('h3 a').forEach(a => {
+    a.style.backgroundSize = '16px';
+  });
+}
+
+// ================================================
 // 3D Fold Scroll — adapted from Sharon Zheng's App.js
 // Uses native window scroll. Sets body height to
 // content overflow + viewport, then translates
@@ -46,4 +81,7 @@ function calcValues() {
 }
 
 window.addEventListener('resize', calcValues);
-window.addEventListener('DOMContentLoaded', calcValues);
+window.addEventListener('DOMContentLoaded', () => {
+  updateLinkArrows();
+  calcValues();
+});

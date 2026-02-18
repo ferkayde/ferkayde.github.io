@@ -3,9 +3,26 @@
    3D Perspective / Projection Effect
    ================================================ */
 
-:root {
+/* ---------- THEME DEFINITIONS ---------- */
+[data-theme="dark"] {
+  --main-bg-color: #0F0F0F;
+  --text-color: #F7F7F7;
+}
+
+[data-theme="light"] {
   --main-bg-color: #F7F7F7;
   --text-color: #0F0F0F;
+}
+
+[data-theme="blue"] {
+  --main-bg-color: #1700c7;
+  --text-color: #F7F7F7;
+}
+
+/* Fallback if no theme set */
+:root {
+  --main-bg-color: #0F0F0F;
+  --text-color: #F7F7F7;
 }
 
 ::selection {
@@ -14,7 +31,7 @@
 }
 
 ::-moz-selection {
-  background: rgba(255, 255, 255, 0.99);
+  background: var(--text-color);
   color: var(--main-bg-color);
 }
 
@@ -38,7 +55,6 @@ body {
 a {
   color: var(--text-color);
   padding-right: 16px;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 172 172'%3E%3Cg fill='%230F0F0F'%3E%3Cpath d='M96.75,26.875v10.75h29.89844l-66.01172,66.01172l7.72656,7.72656l66.01172,-66.01172v29.89844h10.75v-48.375zM26.875,48.375v96.75h96.75v-69.875l-10.75,10.75v48.375h-75.25v-75.25h48.375l10.75,-10.75z'/%3E%3C/g%3E%3C/svg%3E") right center no-repeat;
   background-size: 14px;
 }
 
